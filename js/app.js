@@ -25,8 +25,12 @@ angular.module('app', [])
 
   var vm = this;
 
-  MarkovSvc.get('english', 'Mateo', 'Ortiz', 3)
-    .then(function(data) {
-      vm.mes = data.data;
-    }); 
+  vm.send = function(req) {
+    MarkovSvc.get(req.language, req.fname, req.lname, req.num)
+      .then(function(data) {
+        vm.mes = data.data;
+      }); 
+  };
+
+  
 });

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>Become a curator</title>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +11,19 @@
 </head>
 <body ng-app="app" ng-controller="markovCtrl as ctrl">
 	<h1>Buenas, pa que veas.</h1>
+
+  <form novalidate class="simple-form">
+    Nombre: <input type="text" ng-model="req.fname" /><br />
+    Apellido: <input type="text" ng-model="req.lname" /><br />
+    Idioma:
+
+    <input type="radio" ng-model="req.language" value="spanish" />Español
+    <input type="radio" ng-model="req.language" value="english" />English
+
+    <br/>
+    Número: <input type="number" ng-model="req.num" /><br />
+    <input type="submit" ng-click="ctrl.send(req)" value="Generar texto" />
+  </form>
 
 	{{ ctrl.mes.text }}
 </body>
