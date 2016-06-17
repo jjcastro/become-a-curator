@@ -25,7 +25,7 @@ angular.module('app', [])
 
   var vm = this;
 
-  MarkovSvc.get('english', 'Juan José', 'Castro', 3)
+  MarkovSvc.get('english', 'Mateo', 'Ortiz', 3)
     .then(function(data) {
       vm.mes = data.data;
     }); 
