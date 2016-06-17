@@ -6,7 +6,7 @@ angular.module('app', [])
 
   generatorFactory.get = function(language, fname, lname, num) {
     
-    var url = 'http://api.becomeacurator.com/' + language + '?';
+    var url = 'http://api.becomeacurator.com/' + language + '?'
             + 'fname=' + fname + '&'
             + 'lname=' + lname + '&';
 
@@ -14,7 +14,7 @@ angular.module('app', [])
       url += 'num=' + num;
     }
 
-    return $http.get(url);
+    return $http.jsonp(url + '&callback=JSON_CALLBACK');
   }
 
   return generatorFactory;
@@ -25,6 +25,8 @@ angular.module('app', [])
 
   var vm = this;
 
-  vm.mes = MarkovSvc.get('spanish', 'man', 'gor');
-
+  MarkovSvc.get('english', 'Juan José', 'Castro', 3)
+    .then(function(data) {
+      vm.mes = data.data;
+    }); 
 });

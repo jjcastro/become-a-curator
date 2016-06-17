@@ -2,8 +2,13 @@
 <html>
 <head>
 	<title>Become a curator</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="js/app.js"></script>
 </head>
-<body>
-	Become a curator.
+<body ng-app="app" ng-controller="markovCtrl as ctrl">
+	<h1>Become a curator.</h1>
+
+	{{ ctrl.mes.text }}
 </body>
 </html>
