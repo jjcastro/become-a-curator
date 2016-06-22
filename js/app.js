@@ -76,9 +76,10 @@ angular.module('app', ['ui.router', 'ngSanitize'])
 
       input: "input the artist's name",
       sub3: "(or your own name if youʼre an artist who curates themselves)",
+      error: "nope! please input both a first name and a last name.",
 
       result: "here, your curatorial statement:",
-      another: "not satisfied? get another one."
+      another: "not satisfied? try another one."
     };
 
     languageFactory.es = {
@@ -104,6 +105,7 @@ angular.module('app', ['ui.router', 'ngSanitize'])
 
       input: "ingresa el nombre del artista",
       sub3: "(o tu propio nombre, si eres un artista que se cura a sí mismo)",
+      error: "espera! por favor ingresa nombres y apellidos.",
 
       result: "tu texto curatorial:",
       another: "¿insatisfecho? una vez más."
@@ -117,11 +119,19 @@ angular.module('app', ['ui.router', 'ngSanitize'])
     var userLang = (navigator.language || navigator.userLanguage).substring(0, 2);
 
     vm.send = function(req) {
-      $state.go('text', {
-        fn: req.fname,
-        ln: req.lname,
-        lang: vm.lang.thisLang
-      });
+      if (typeof req       === "undefined" ||
+          typeof req.fname === "undefined" ||
+          typeof req.lname === "undefined")
+      {
+        vm.error = true;
+      } else {
+        vm.error = false;
+        $state.go('text', {
+          fn: req.fname,
+          ln: req.lname,
+          lang: vm.lang.thisLang
+        });
+      }
     };
 
     vm.setLang = function(lang, reload) {

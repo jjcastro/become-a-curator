@@ -111,6 +111,15 @@ section#main {
   border: 2px #F3858C solid
 }
 
+span.error {
+  background-color: #F3858C;
+  display: block;
+  padding: 10px 15px;
+  width: 402px;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+}
+
 .form-info {
   display: block;
   font-size: 1.4em;
@@ -166,22 +175,34 @@ form .submit:focus {
 
 .main-body {
   background-color: #F3858C;
-  margin: 60px 0 50px 15%;
+  /*margin: 60px 0 50px 15%;*/
+  margin: 90px auto;
+  max-width: 600px;
+}
+
+.main-body h1 {
+  margin-bottom: 15px;
 }
 
 .main-body .text-wrapper {
   font-weight: 300;
-  max-width: 500px;
-  margin: 20px 60px;
 }
 
 .main-body .loading {
   background-color: #fff;
+  overflow: auto;
+}
+
+.main-body .loading img {
+  width: 30px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 120px;
 }
 
 .main-body .loading > span {
   display: block;
-  padding: 120px 25px ;
+  padding: 10px 25px 120px 25px;
   /*font-size: 2em;*/
   text-align: center;
 }
@@ -191,7 +212,7 @@ form .submit:focus {
   font-family: "adelle", serif;;
   padding: 25px;
   font-size: 1em;
-  line-height: 1.5em;
+  line-height: 1.8em;
   margin: 0;
 }
 
@@ -232,4 +253,70 @@ footer a:hover {
   background: rgba(243, 133, 140, 0.9);
   color: #fff;
   box-shadow: none;
+}
+
+/* SPINNING ANIMATION
+===================== */
+
+.spinner {
+  -webkit-animation:spin 1s infinite;
+  -moz-animation:spin 1s infinite;
+  animation:spin 1s infinite;
+}
+
+@keyframes spin {
+  from  { transform:rotate(0deg); }
+  to  { transform:rotate(360deg); }
+}
+
+@-webkit-keyframes spin {
+  from  { -webkit-transform:rotate(0deg); }
+  to  { -webkit-transform:rotate(360deg); }
+}
+
+@-moz-keyframes spin {
+  from  { -moz-transform:rotate(0deg); }  
+  to  { -moz-transform:rotate(360deg); }
+}
+
+/* MEDIA QUERIES
+===================== */
+
+@media screen and (min-width: 1200px) {
+  body {
+    background-color: #fff;
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+
+  div.titles {
+    padding: 60px 80px 10px;
+  }
+
+  section#main {
+    margin-left: 80px;
+    padding-top:30px;
+  }
+
+  .main-body {
+    max-width: 750px;
+  }
+
+  div.btn-inner {
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .url {
+    margin: 15px 20px;
+  }
+
+  #invitation {
+    margin-bottom: 10px;
+  }
+
+  span.another {
+    margin-top: 20px;
+  }
 }

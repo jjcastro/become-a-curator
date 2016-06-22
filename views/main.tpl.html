@@ -22,9 +22,12 @@
 	  <input type="submit" value="→" class="submit">
 	</form>
 
+	<span ng-if="ctrl.error" class="error animated bounceIn">{{ctrl.lang.error}}</span>
+
 	<div class="form-info">
 		<span>{{ ctrl.lang.input }}</span>
 		<span class="small">{{ ctrl.lang.sub3 }}</span>
+
 	</div>
 
 </section>
