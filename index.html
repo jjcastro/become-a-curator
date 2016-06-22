@@ -16,15 +16,13 @@
 
 	<script src="js/angular.js"></script>
 	<script src="js/angular-ui-router.js"></script>
-	<script src="js/angular-animate.js"></script>
+	<script src="js/angular-sanitize.js"></script>
 	<script src="js/app.js"></script>
 </head>
 
 <body ng-controller="mainCtrl as ctrl" ng-class="$state.current.data.bodyClass">
 	
-	<div id="content-views">
-		<div ui-view class="fade"></div>
-	</div>
+	<div ui-view></div>
 
 	<footer>
 		{{ ctrl.lang.footer.project }}

@@ -4,7 +4,11 @@
 
 		<div class="btn-inner">
 			<a ui-sref="about">{{ ctrl.lang.about }}</a>
-			<a ng-click="ctrl.setLang(ctrl.lang.otherLocale, true)" style="cursor: pointer" class="animated bounce">{{ ctrl.lang.other }}</a>
+			<a ng-click="ctrl.setLang(ctrl.lang.otherLocale, true);
+									 text.request(ctrl.lang.thisLang)"
+				 style="cursor: pointer">
+				{{ ctrl.lang.other }}
+			</a>
 		</div>
 	</div>
 
@@ -17,11 +21,13 @@
 				<span>Loading...</span>
 			</div>
 			<div class="text-content">
-				<p ng-if="!text.loading">{{ text.content }}</p>
+				<p ng-if="!text.loading" ng-bind-html="text.content"></p>
 				
 				</span>
 			</div>
-			<span class="another" ng-click="text.request()" style="cursor: pointer">
+			<span class="another"
+						ng-click="text.request(ctrl.lang.thisLang)"
+						style="cursor: pointer">
 					{{ ctrl.lang.another }}
 		</div>
 

@@ -1,0 +1,13 @@
+<div class="header-inner">
+	<a class="url" ui-sref="main">becomeacurator.com</a>
+
+	<div class="btn-inner">
+		<a ui-sref="about">{{ ctrl.lang.about }}</a>
+		<a ng-click="ctrl.setLang(ctrl.lang.otherLocale, true);
+								 text.request()"
+			 style="cursor: pointer"
+			 class="animated bounce">
+			{{ ctrl.lang.other }}
+		</a>
+	</div>
+</div>

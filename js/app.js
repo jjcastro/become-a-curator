@@ -1,4 +1,4 @@
-angular.module('app', ['ui.router']) 
+angular.module('app', ['ui.router', 'ngSanitize']) 
 
     // Put state/params in rootScope to enable custom background on <body>
   .run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $stateParams) {
@@ -18,7 +18,10 @@ angular.module('app', ['ui.router'])
       // about
       .state('about', {
         url         : "/about",
-        templateUrl : "views/about.tpl.html"
+        templateUrl : "views/about.tpl.html",
+        data: {
+          bodyClass: 'pinkbkg'
+        }
       })
       // text
       .state('text', {
@@ -135,9 +138,9 @@ angular.module('app', ['ui.router'])
   .controller('textCtrl', function($state, MarkovSvc, $stateParams) {
     var vm = this;
 
-    vm.request = function() {
+    vm.request = function(lang) {
       vm.loading = true;
-      MarkovSvc.get($stateParams.lang, $stateParams.fn, $stateParams.ln, 5)
+      MarkovSvc.get(lang || $stateParams.lang, $stateParams.fn, $stateParams.ln, 5)
         .then(function(response) {
           vm.content = response.data.text;
           vm.loading = false;

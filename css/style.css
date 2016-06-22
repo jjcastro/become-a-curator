@@ -130,14 +130,9 @@ form .submit {
   color: #555;
   border: none;
   background-color: #fff;
-  /*font-family: "bligh";*/
   font-size: 1.8em;
   display: inline-block;
   padding: 4px 2px;
-  /*line-height: 0.4em;*/
-  /*padding-top: 30px; */
-  /*padding-top: 10px;*/
-  /*display: inline-block;*/
   cursor: pointer;
 }
 
@@ -171,7 +166,7 @@ form .submit:focus {
 
 .main-body {
   background-color: #F3858C;
-  margin: 80px 0 50px 15%;
+  margin: 60px 0 50px 15%;
 }
 
 .main-body .text-wrapper {
@@ -186,7 +181,7 @@ form .submit:focus {
 
 .main-body .loading > span {
   display: block;
-  padding: 40px 25px ;
+  padding: 120px 25px ;
   /*font-size: 2em;*/
   text-align: center;
 }
@@ -198,6 +193,11 @@ form .submit:focus {
   font-size: 1em;
   line-height: 1.5em;
   margin: 0;
+}
+
+.main-body p>i {
+  font-style: normal;
+  font-weight: 600;
 }
 
 .main-body .another {
