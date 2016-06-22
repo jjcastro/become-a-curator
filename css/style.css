@@ -1,0 +1,177 @@
+
+/* MAIN PAGE
+===================== */
+
+* {
+  transition: 0.2s all ease;
+}
+
+body {
+  /*font-family: 'Brandon Grotesque';*/
+  font-family: "franklin-gothic-urw", sans-serif;
+  /*font-family: "museo";
+  font-family: "katarine-web";
+  font-family: "jaf-facitweb";*/
+
+  font-family: "bligh";
+}
+
+body {
+  background-color: #F3858C;
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+input, .text-serif {
+  font-family: "adelle", serif;
+  font-weight: 300 !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.url {
+  color: #fff;
+  float: right;
+  margin: 10px 15px;
+}
+
+body#inner {
+  background-color: #fff;
+}
+
+div.header {
+  background-color: #F3858C;
+  position: relative;
+}
+
+h1 {
+  margin: 0;
+  /*font-family: sans-serif;*/
+  color: #fff;
+  font-size: 1.6em;
+  font-weight: 400;
+  line-height: 1.3em;
+}
+
+div.titles {
+  padding: 50px 60px 10px;
+  /*max-width: 340px;*/
+}
+
+h1.title {
+  display: inline-block;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 30px;
+}
+
+h1#invitation {
+  margin-top: 30px;
+  padding-bottom: 10px;
+}
+
+div.btn-inner > a {
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 3px 6px;
+  font-size: 1em;
+
+  display: inline-block;
+  transition: 0.1s all linear;
+}
+
+div.btn-inner > a:hover {
+  color: #F3858C;
+  background-color: #fff;
+  /*padding: 30px 60px;*/
+}
+
+div.btn-inner {
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+}
+
+section#main {
+  margin-left: 60px;
+  padding-top: 25px;
+}
+
+.input-name {
+  /*padding: 20px;*/
+  font-size: 1.2em;
+  max-width: 190px;
+  border: 2px #555 solid;
+  padding: 5px 10px;
+
+  transition: 0.2s border ease;
+}
+
+.input-name:focus {
+  outline: none;
+  border: 2px #F3858C solid
+}
+
+.form-info {
+  display: block;
+  font-size: 1.4em;
+  margin-top: 15px;
+}
+
+.form-info span.small {
+  font-size: 1rem;
+  display: block;
+}
+
+form > * {
+  vertical-align: middle;
+}
+
+form .submit {
+  color: #555;
+  border: none;
+  background-color: #fff;
+  /*font-family: "bligh";*/
+  font-size: 1.8em;
+  display: inline-block;
+  padding: 4px 2px;
+  /*line-height: 0.4em;*/
+  /*padding-top: 30px; */
+  /*padding-top: 10px;*/
+  /*display: inline-block;*/
+  cursor: pointer;
+}
+
+form .submit:hover, form .submit:active {
+  color: #F3858C;
+}
+
+form .submit:focus {
+  outline: none;
+  color: #F3858C;
+}
+
+footer {
+  background-color: #fff;
+  color: #888;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 20px 20px;
+  font-size: 0.9em;
+}
+
+footer a {
+  color: #888;
+  box-shadow: inset 0 -1px 0 rgba(243, 133, 140, 0.9);
+  border-bottom: 2px solid rgba(243, 133, 140, 0.9);
+  transition: 0.15s all ease;
+}
+
+footer a:hover {
+  background: rgba(243, 133, 140, 0.9);
+  color: #fff;
+  box-shadow: none;
+}

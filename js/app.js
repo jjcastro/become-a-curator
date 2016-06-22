@@ -1,36 +1,50 @@
-angular.module('app', []) 
+angular.module('app', ['ui.router']) 
 
-.service('MarkovSvc', function($http) {
+  .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+  $urlRouterProvider.otherwise("/");
+  // $locationProvider.html5Mode(true);
+  $stateProvider
+    // login page
+    .state('main', {
+      url         : "/",
+      templateUrl : "views/main.tpl.html"
+    });
+  })
 
-  var generatorFactory = {};
+  .service('MarkovSvc', function($http) {
 
-  generatorFactory.get = function(language, fname, lname, num) {
-    
-    var url = 'http://api.becomeacurator.com/' + language + '?'
-            + 'fname=' + fname + '&'
-            + 'lname=' + lname + '&';
+    var generatorFactory = {};
 
-    if (num) {
-      url += 'num=' + num;
+    generatorFactory.get = function(language, fname, lname, num) {
+      
+      var url = 'http://api.becomeacurator.com/' + language + '?'
+              + 'fname=' + fname + '&'
+              + 'lname=' + lname + '&';
+
+      if (num) {
+        url += 'num=' + num;
+      }
+
+      return $http.jsonp(url + '&callback=JSON_CALLBACK');
     }
 
-    return $http.jsonp(url + '&callback=JSON_CALLBACK');
-  }
+    return generatorFactory;
 
-  return generatorFactory;
+  })
 
-})
+  .controller('mainCtrl', function(MarkovSvc) {
 
-.controller('markovCtrl', function(MarkovSvc) {
+    var userLang = navigator.language || navigator.userLanguage; 
+    console.log("The language is: " + userLang);
 
-  var vm = this;
+    var vm = this;
 
-  vm.send = function(req) {
-    MarkovSvc.get(req.language, req.fname, req.lname, req.num)
-      .then(function(data) {
-        vm.mes = data.data;
-      }); 
-  };
+    vm.send = function(req) {
+      MarkovSvc.get(req.language, req.fname, req.lname, req.num)
+        .then(function(data) {
+          vm.mes = data.data;
+        }); 
+    };
 
-  
-});
+    
+  });
