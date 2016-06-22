@@ -1,16 +1,29 @@
-<div class="header">
-	<a class="url" href="http://becomeacurator.com">becomeacurator.com</a>
+<div ng-controller="textCtrl as text">
+	<div class="header-inner">
+		<a class="url" ui-sref="main">becomeacurator.com</a>
 
-	<div class="btn-inner">
-		<a ui-sref="about">{{ ctrl.lang.about }}</a>
-		<a ng-click="ctrl.setLang(ctrl.lang.otherLocale)" style="cursor: pointer" class="animated bounce">{{ ctrl.lang.other }}</a>
+		<div class="btn-inner">
+			<a ui-sref="about">{{ ctrl.lang.about }}</a>
+			<a ng-click="ctrl.setLang(ctrl.lang.otherLocale, true)" style="cursor: pointer" class="animated bounce">{{ ctrl.lang.other }}</a>
+		</div>
 	</div>
-</div>
 
-<div ng-controller="textCtrl as text" class="main-body">
+	<div  class="main-body">
 
-<h1>Here's your statement:</h1>
+		<h1>{{ ctrl.lang.result }}</h1>
 
-<p>{{ text.content }}</p>
+		<div class="text-wrapper">
+			<div ng-if="text.loading" class="loading">
+				<span>Loading...</span>
+			</div>
+			<div class="text-content">
+				<p ng-if="!text.loading">{{ text.content }}</p>
+				
+				</span>
+			</div>
+			<span class="another" ng-click="text.request()" style="cursor: pointer">
+					{{ ctrl.lang.another }}
+		</div>
 
+	</div>
 </div>

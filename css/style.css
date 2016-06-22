@@ -1,5 +1,5 @@
 
-/* MAIN PAGE
+/* GENERAL
 ===================== */
 
 * {
@@ -7,13 +7,7 @@
 }
 
 body {
-  /*font-family: 'Brandon Grotesque';*/
-  font-family: "franklin-gothic-urw", sans-serif;
-  /*font-family: "museo";
-  font-family: "katarine-web";
-  font-family: "jaf-facitweb";*/
-
-  font-family: "bligh";
+  font-family: "bligh", sans-serif;
 }
 
 body {
@@ -37,6 +31,9 @@ a {
   float: right;
   margin: 10px 15px;
 }
+
+/* MAIN PAGE
+===================== */
 
 div.header {
   background-color: #F3858C;
@@ -88,6 +85,10 @@ div.btn-inner {
   position: absolute;
   right: 10px;
   bottom: 15px;
+}
+
+body.pinkbkg {
+  background-color: #F3858C;
 }
 
 section#main {
@@ -149,10 +150,71 @@ form .submit:focus {
   color: #F3858C;
 }
 
-footer {
+/* TEXT RESULTS PAGE
+===================== */
+
+.header-inner {
+  position: fixed;
+  top: 10px;
+  right: 0;
+  text-align: right;
+}
+
+.header-inner .url {
+  float: none;
+}
+
+.header-inner .btn-inner {
+  position: initial;
+  margin: 10px;
+}
+
+.main-body {
+  background-color: #F3858C;
+  margin: 80px 0 50px 15%;
+}
+
+.main-body .text-wrapper {
+  font-weight: 300;
+  max-width: 500px;
+  margin: 20px 60px;
+}
+
+.main-body .loading {
   background-color: #fff;
-  color: #888;
-  position: absolute;
+}
+
+.main-body .loading > span {
+  display: block;
+  padding: 40px 25px ;
+  /*font-size: 2em;*/
+  text-align: center;
+}
+
+.main-body p {
+  background-color: #fff;
+  font-family: "adelle", serif;;
+  padding: 25px;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+.main-body .another {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  display: inline-block;
+  float: right;
+  margin-top: 10px;
+}
+
+/* FOOTER
+===================== */
+
+footer {
+  /*background-color: #fff;*/
+  color: rgba(0,0,0, 0.3);
+  position: fixed;
   bottom: 0;
   right: 0;
   padding: 20px 20px;
@@ -160,7 +222,7 @@ footer {
 }
 
 footer a {
-  color: #888;
+  color: rgba(0,0,0, 0.5);;
   box-shadow: inset 0 -1px 0 rgba(243, 133, 140, 0.9);
   border-bottom: 2px solid rgba(243, 133, 140, 0.9);
   transition: 0.15s all ease;
@@ -170,29 +232,4 @@ footer a:hover {
   background: rgba(243, 133, 140, 0.9);
   color: #fff;
   box-shadow: none;
-}
-
-/* ================= */
-
-#content-views {
-  position: relative;
-}
-
-.ng-leave, .ng-enter {
-  width: 100%;
-  position: absolute;
-}
-
-.ng-enter {
-  -webkit-animation: rubberBand 0.6s both ease;
-  -moz-animation: rubberBand 0.6s both ease;
-  animation: rubberBand 0.6s both ease;
-}
-
-.fade.ng-leave {
-  transition:0.5s linear all;
-  opacity:1;
-}
-.fade.ng-leave.ng-leave-active {
-  opacity:0;
 }

@@ -1,4 +1,10 @@
-angular.module('app', ['ngAnimate', 'ui.router']) 
+angular.module('app', ['ui.router']) 
+
+    // Put state/params in rootScope to enable custom background on <body>
+  .run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $stateParams) {
+      $rootScope.$state = $state;
+      $rootScope.$stateParams = $stateParams;
+    }])
 
   .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise("/");
@@ -18,7 +24,10 @@ angular.module('app', ['ngAnimate', 'ui.router'])
       .state('text', {
         url         : "/text?fn&ln&lang",
         templateUrl : "views/text.tpl.html",
-        controller  : "textCtrl"
+        controller  : "textCtrl",
+        data: {
+          bodyClass: 'pinkbkg'
+        }
       })
   })
 
@@ -43,6 +52,11 @@ angular.module('app', ['ngAnimate', 'ui.router'])
 
     languageFactory.en = {
 
+      footer: {
+        project: "a fun project by",
+        and: "and"
+      },
+
       thisLang: "english",
       otherLocale: "es",
 
@@ -58,10 +72,18 @@ angular.module('app', ['ngAnimate', 'ui.router'])
       lname: "last name",
 
       input: "input the artist's name",
-      sub3: "(or your own name if youʼre an artist who curates themselves)"
+      sub3: "(or your own name if youʼre an artist who curates themselves)",
+
+      result: "here, your curatorial statement:",
+      another: "not satisfied? get another one."
     };
 
     languageFactory.es = {
+
+      footer: {
+        project: "un proyecto de",
+        and: "y"
+      },
 
       thisLang: "spanish",
       otherLocale: "en",
@@ -72,13 +94,16 @@ angular.module('app', ['ngAnimate', 'ui.router'])
       title: "generator de textos curatoriales",
       sub1: "¿no sabes qué escribir?",
       sub2: "aquí estamos para ayudar.",
-      invitation: "manos a la obra:",
+      invitation: "empecemos:",
 
       fname: "nombres",
       lname: "apellidos",
 
       input: "ingresa el nombre del artista",
-      sub3: "(o tu propio nombre, si eres un artista que se cura a sí mismo)"
+      sub3: "(o tu propio nombre, si eres un artista que se cura a sí mismo)",
+
+      result: "tu texto curatorial:",
+      another: "¿insatisfecho? una vez más."
     };
 
     return languageFactory;
@@ -96,8 +121,7 @@ angular.module('app', ['ngAnimate', 'ui.router'])
       });
     };
 
-    vm.setLang = function(lang) {
-      console.log('Locale: ' + lang);
+    vm.setLang = function(lang, reload) {
       if (lang === 'es') {
         vm.lang = LangSvc.es;
       } else if (lang === 'en') {
@@ -105,18 +129,21 @@ angular.module('app', ['ngAnimate', 'ui.router'])
       }
     };
 
-    vm.setLang(userLang);
+    vm.setLang(userLang, false);
   })
 
   .controller('textCtrl', function($state, MarkovSvc, $stateParams) {
     var vm = this;
 
     vm.request = function() {
+      vm.loading = true;
       MarkovSvc.get($stateParams.lang, $stateParams.fn, $stateParams.ln, 5)
         .then(function(response) {
           vm.content = response.data.text;
+          vm.loading = false;
         }); 
     };
 
+    vm.loading = true;
     vm.request();
   });
