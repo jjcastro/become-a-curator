@@ -1,19 +1,25 @@
-angular.module('app', ['ui.router']) 
+angular.module('app', ['ngAnimate', 'ui.router']) 
 
   .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-  $urlRouterProvider.otherwise("/");
-  // $locationProvider.html5Mode(true);
-  $stateProvider
-    // main page
-    .state('main', {
-      url         : "/",
-      templateUrl : "views/main.tpl.html"
-    })
-    // about
-    .state('about', {
-      url         : "/about",
-      templateUrl : "views/about.tpl.html"
-    });
+    $urlRouterProvider.otherwise("/");
+    // $locationProvider.html5Mode(true);
+    $stateProvider
+      // main page
+      .state('main', {
+        url         : "/",
+        templateUrl : "views/main.tpl.html"
+      })
+      // about
+      .state('about', {
+        url         : "/about",
+        templateUrl : "views/about.tpl.html"
+      })
+      // text
+      .state('text', {
+        url         : "/text?fn&ln&lang",
+        templateUrl : "views/text.tpl.html",
+        controller  : "textCtrl"
+      })
   })
 
   .service('MarkovSvc', function($http) {
@@ -37,9 +43,11 @@ angular.module('app', ['ui.router'])
 
     languageFactory.en = {
 
+      thisLang: "english",
+      otherLocale: "es",
+
       about: "what's this?",
       other: "español",
-      otherLocale: "es",
 
       title: "curatorial statement generator",
       sub1: "can't figure out what to write?",
@@ -55,9 +63,11 @@ angular.module('app', ['ui.router'])
 
     languageFactory.es = {
 
+      thisLang: "spanish",
+      otherLocale: "en",
+
       about: "acerca de",
       other: "english",
-      otherLocale: "en",
 
       title: "generator de textos curatoriales",
       sub1: "¿no sabes qué escribir?",
@@ -74,15 +84,16 @@ angular.module('app', ['ui.router'])
     return languageFactory;
   })
 
-  .controller('mainCtrl', function(MarkovSvc, LangSvc) {
+  .controller('mainCtrl', function($state, LangSvc) {
     var vm = this;
     var userLang = (navigator.language || navigator.userLanguage).substring(0, 2);
 
     vm.send = function(req) {
-      MarkovSvc.get(req.language, req.fname, req.lname, req.num)
-        .then(function(data) {
-          vm.mes = data.data;
-        }); 
+      $state.go('text', {
+        fn: req.fname,
+        ln: req.lname,
+        lang: vm.lang.thisLang
+      });
     };
 
     vm.setLang = function(lang) {
@@ -95,4 +106,17 @@ angular.module('app', ['ui.router'])
     };
 
     vm.setLang(userLang);
+  })
+
+  .controller('textCtrl', function($state, MarkovSvc, $stateParams) {
+    var vm = this;
+
+    vm.request = function() {
+      MarkovSvc.get($stateParams.lang, $stateParams.fn, $stateParams.ln, 5)
+        .then(function(response) {
+          vm.content = response.data.text;
+        }); 
+    };
+
+    vm.request();
   });

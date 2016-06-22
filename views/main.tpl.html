@@ -16,9 +16,9 @@
 </div>
 
 <section id="main">
-	<form novalidate class="simple-form">
+	<form novalidate class="simple-form" ng-submit="ctrl.send(req)">
 		<input type="text" placeholder='{{ ctrl.lang.fname }}' ng-model="req.fname" class="input-name"  />
-	  <input type="text" placeholder='{{ ctrl.lang.lname }}' ng-click='' ng-model="req.lname" class="input-name"/>
+	  <input type="text" placeholder='{{ ctrl.lang.lname }}' ng-model="req.lname" class="input-name"/>
 	  <input type="submit" value="→" class="submit">
 	</form>
 
