@@ -1,30 +1,30 @@
 <div class="header">
-		<a class="url" href="http://becomeacurator.com">becomeacurator.com</a>
+	<a class="url" href="http://becomeacurator.com">becomeacurator.com</a>
 
-		<div class="titles">
-			<h1 class="title">curatorial statement generator</h1>
-			<br>
-			<h1>can't figure out what to write?</h1>
-			<h1>we're here to help.</h1>
-			<h1 id="invitation">letʼs get started:</h1>
-		</div>
-
-		<div class="btn-inner">
-			<a ui-sref="about">what is this?</a>
-			<a ng-click="ctrl.setLang('es')" class="animated bounce">spanish</a>
-		</div>
+	<div class="titles">
+		<h1 class="title">{{ ctrl.lang.title }}</h1>
+		<br>
+		<h1>{{ ctrl.lang.sub1 }}</h1>
+		<h1>{{ ctrl.lang.sub2 }}</h1>
+		<h1 id="invitation">{{ ctrl.lang.invitation }}</h1>
 	</div>
 
-	<section id="main">
-		<form novalidate class="simple-form">
-			<input type="text" placeholder='first name' ng-model="req.fname" class="input-name"  />
-		  <input type="text" placeholder='last name' ng-click='' ng-model="req.lname" class="input-name"/>
-		  <input type="submit" value="→" class="submit">
-		</form>
-	
-		<div class="form-info">
-			<span>input the artist's name.</span>
-			<span class="small">(or your own name if youʼre an artist who curates themselves)</span>
-		</div>
+	<div class="btn-inner">
+		<a ui-sref="about">{{ ctrl.lang.about }}</a>
+		<a ng-click="ctrl.setLang(ctrl.lang.otherLocale)" style="cursor: pointer" class="animated bounce">{{ ctrl.lang.other }}</a>
+	</div>
+</div>
 
-	</section>
+<section id="main">
+	<form novalidate class="simple-form">
+		<input type="text" placeholder='{{ ctrl.lang.fname }}' ng-model="req.fname" class="input-name"  />
+	  <input type="text" placeholder='{{ ctrl.lang.lname }}' ng-click='' ng-model="req.lname" class="input-name"/>
+	  <input type="submit" value="→" class="submit">
+	</form>
+
+	<div class="form-info">
+		<span>{{ ctrl.lang.input }}</span>
+		<span class="small">{{ ctrl.lang.sub3 }}</span>
+	</div>
+
+</section>
