@@ -2,11 +2,11 @@
 	<a class="url" ui-sref="main">becomeacurator.com</a>
 
 	<div class="titles">
-		<h1 class="title">{{ ctrl.lang.title }}</h1>
+		<h1 class="title">{{ ctrl.lang.main.title }}</h1>
 		<br>
-		<h1>{{ ctrl.lang.sub1 }}</h1>
-		<h1>{{ ctrl.lang.sub2 }}</h1>
-		<h1 id="invitation">{{ ctrl.lang.invitation }}</h1>
+		<h1>{{ ctrl.lang.main.sub1 }}</h1>
+		<h1>{{ ctrl.lang.main.sub2 }}</h1>
+		<h1 id="invitation">{{ ctrl.lang.main.invitation }}</h1>
 	</div>
 
 	<div class="btn-inner">
@@ -17,16 +17,16 @@
 
 <section id="main">
 	<form novalidate class="simple-form" ng-submit="ctrl.send(req)">
-		<input type="text" placeholder='{{ ctrl.lang.fname }}' ng-model="req.fname" class="input-name"  />
-	  <input type="text" placeholder='{{ ctrl.lang.lname }}' ng-model="req.lname" class="input-name"/>
+		<input type="text" placeholder='{{ ctrl.lang.main.fname }}' ng-model="req.fname" class="input-name"  />
+	  <input type="text" placeholder='{{ ctrl.lang.main.lname }}' ng-model="req.lname" class="input-name"/>
 	  <input type="submit" value="→" class="submit">
 	</form>
 
-	<span ng-if="ctrl.error" class="error animated bounceIn">{{ctrl.lang.error}}</span>
+	<span ng-if="ctrl.error" class="error animated bounceIn">{{ctrl.lang.main.error}}</span>
 
 	<div class="form-info">
-		<span>{{ ctrl.lang.input }}</span>
-		<span class="small">{{ ctrl.lang.sub3 }}</span>
+		<span>{{ ctrl.lang.main.input }}</span>
+		<span class="small">{{ ctrl.lang.main.sub3 }}</span>
 
 	</div>
 

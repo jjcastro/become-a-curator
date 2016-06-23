@@ -14,12 +14,12 @@
 
 	<div  class="main-body">
 
-		<h1>{{ ctrl.lang.result }}</h1>
+		<h1>{{ ctrl.lang.result.result }}</h1>
 
 		<div class="text-wrapper">
 			<div ng-if="text.loading" class="loading">
 				<img src="assets/loading.png" class="spinner">
-				<span>Loading...</span>
+				<span>{{ ctrl.lang.result.loading }}</span>
 			</div>
 			<div class="text-content">
 				<p ng-if="!text.loading" ng-bind-html="text.content"></p>
@@ -28,7 +28,7 @@
 			<span class="another"
 						ng-click="text.request(ctrl.lang.thisLang)"
 						style="cursor: pointer">
-					{{ ctrl.lang.another }}
+					{{ ctrl.lang.result.another }}
 		</div>
 
 	</div>
