@@ -224,9 +224,16 @@ form .submit:focus {
 .main-body .another {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.75);
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  padding: 5px 8px;
   display: inline-block;
   float: right;
   margin-top: 10px;
+}
+
+.main-body .another:hover {
+  background-color: #fff;
+  color: #F3858C;
 }
 
 /* FOOTER
