@@ -57,7 +57,9 @@ angular.module('app', ['ui.router', 'ngSanitize', 'langService'])
     vm.send = function(req) {
       if (typeof req       === "undefined" ||
           typeof req.fname === "undefined" ||
-          typeof req.lname === "undefined")
+          typeof req.lname === "undefined" ||
+          typeof req.fname === ""          ||
+          typeof req.lname === "")
       {
         vm.error = true;
       } else {
