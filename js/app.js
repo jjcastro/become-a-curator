@@ -1,10 +1,13 @@
 angular.module('app', ['ui.router', 'ngSanitize', 'langService']) 
 
-    // Put state/params in rootScope to enable custom background on <body>
+  // Put state/params in rootScope to enable custom background on <body>
   .run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $stateParams) {
       $rootScope.$state = $state;
       $rootScope.$stateParams = $stateParams;
     }])
+
+  // ROUTES CONFIGURATION
+  // ========================
 
   .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise("/");
@@ -32,13 +35,22 @@ angular.module('app', ['ui.router', 'ngSanitize', 'langService'])
           bodyClass: 'pinkbkg'
         }
       })
+      // console page
+      .state('console', {
+        url         : "/console",
+        templateUrl : "views/console.tpl.html",
+        controller  : "consoleCtrl",
+      })
   })
 
-  .service('MarkovSvc', function($http) {
+  // BACKEND SERVICE
+  // ========================
 
-    var generatorFactory = {};
+  .service('GeneratorSvc', function($http) {
 
-    generatorFactory.get = function(language, fname, lname, num) {
+    var generator = {};
+
+    generator.get = function(language, fname, lname, num) {
       var url = 'http://api.becomeacurator.com/' + language + '?'
               + 'fname=' + fname + '&'
               + 'lname=' + lname + '&';
@@ -46,9 +58,25 @@ angular.module('app', ['ui.router', 'ngSanitize', 'langService'])
         url += 'num=' + num;
       }
       return $http.jsonp(url + '&callback=JSON_CALLBACK');
-    }
-    return generatorFactory;
+    };
+
+    generator.getBits = function(document) {
+      var url = 'http://api.becomeacurator.com/bits?'
+              + 'document=' + document;
+      return $http.jsonp(url + '&callback=JSON_CALLBACK');
+    };
+
+    // generator.getBits = function(document) {
+    //   var url = 'http://api.becomeacurator.com/bits?'
+    //           + 'document=' + document;
+    //   return $http.jsonp(url + '&callback=JSON_CALLBACK');
+    // }
+
+    return generator;
   })
+
+  // MAIN CONTROLLER
+  // ========================
 
   .controller('mainCtrl', function($state, LangSvc) {
     var vm = this;
@@ -87,12 +115,34 @@ angular.module('app', ['ui.router', 'ngSanitize', 'langService'])
     vm.setLang(userLang, false);
   })
 
-  .controller('textCtrl', function($state, MarkovSvc, $stateParams) {
+  // TEXT RESULTS CONTROLLER
+  // ========================
+
+  .controller('textCtrl', function($state, GeneratorSvc, $stateParams) {
     var vm = this;
 
     vm.request = function(lang) {
       vm.loading = true;
-      MarkovSvc.get(lang || $stateParams.lang, $stateParams.fn, $stateParams.ln, 5)
+      GeneratorSvc.get(lang || $stateParams.lang, $stateParams.fn, $stateParams.ln, 5)
+        .then(function(response) {
+          vm.content = response.data.text;
+          vm.loading = false;
+        }); 
+    };
+
+    vm.loading = true;
+    vm.request();
+  })
+
+  // CONSOLE CONTROLLER
+  // ========================
+
+  .controller('consoleCtrl', function($state, GeneratorSvc, $stateParams) {
+    var vm = this;
+
+    vm.request = function(lang) {
+      vm.loading = true;
+      GeneratorSvc.get(lang || $stateParams.lang, $stateParams.fn, $stateParams.ln, 5)
         .then(function(response) {
           vm.content = response.data.text;
           vm.loading = false;
