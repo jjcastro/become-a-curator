@@ -39,13 +39,13 @@ angular.module('langService', []).service('LangSvc', function() {
     },
 
     aboutPage: {
-      leadP: "<b>Become a curator</b> is an automatic curatorial text generator. The statements are generated using a computer algorithm powered by statistical models created based on large amounts of text. These models are run through random iterations based on word frequency, to automatically generate clear but meaningless sentences. This process is called a <a href='https://en.wikipedia.org/wiki/Markov_chain'>Markov Chain</a>. The original text comes from processing several curatorial statements by many museums and galleries around the world, such as " /* these. */,
+      leadP: "<b>Become a curator</b> is an automatic curatorial text generator. The statements are generated using a computer algorithm powered by statistical models. These are created based on large amounts of text. The models are run through random iterations based on word frequency, to automatically generate clear but meaningless sentences. This process is called a <a href='https://en.wikipedia.org/wiki/Markov_chain'>Markov Chain</a>. The original text comes from processing several curatorial statements by many museums and galleries around the world, such as " /* these. */,
 
       sourceLink: "these",
       sources: "MoMA, New Museum, MCASD, MALBA, Serpentine Galleries, Tate Modern, The Contemporary Austin, MCA Chicago, MACBA, The Art Museum at Tokio, and The Museum of Contemporary Art in Canada",
 
       info: 
-        "<p>As a disclaimer, we're not attempting to minimize the importance of art curating in any way. We just want to show –hopefully through humor– that art is circular and that most of art speech is somehow related. To find meaning can be fun and this is all about that.</p>" +
+        "<p>As a disclaimer, by creating this we're not attempting to minimize the importance of art curating in any way. We just want to show –hopefully through humor– that art is circular and that most of art speech is somehow related. Finding meaning can be fun and this is all about that.</p>" +
         "<p>Keep in mind, we are not storing your data. If you want to find out more about our project, how we created it, where the texts come from or you just want to say hello, don't hesitate to get in touch at <a href='mailto:becomeacurator@gmail.com'>becomeacurator@gmail.com</a>.  If you liked it, please share:</p>",
 
       credits: "Designed, developed and curated by <a href='http://julianacastrov.com'>Juliana Castro</a> and <a href='http://jjcastro.com'>Juan José Castro</a>."
