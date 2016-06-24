@@ -1,0 +1,45 @@
+<div class="console-header">
+
+<h1>This is the developers console!</h1>
+<p>These are the current bits selected for each category.<br>You can add more at the bottom of each column.</p>
+
+</div>
+
+<div class="console-body">
+	
+	<div class="console-column">
+		<h2>English Influences</h2>
+		<ul>
+			<li ng-repeat="line in console.englishI.lines">{{line}}</li>
+		</ul>
+		<input type="text" placeholder="New line" ng-model="string1">
+		<span ng-click="console.add(console.englishI.name, string1)" class="add-btn">Add</span>
+	</div>
+
+	<div class="console-column">
+		<h2>Spanish Influences</h2>
+		<ul>
+			<li ng-repeat="line in console.spanishI.lines">{{line}}</li>
+		</ul>
+		<input type="text" placeholder="New line" ng-model="string2">
+		<span ng-click="console.add(console.spanishI.name, string2)" class="add-btn">Add</span>
+	</div>
+
+	<div class="console-column">
+		<h2>English Cities</h2>
+		<ul>
+			<li ng-repeat="line in console.englishC.lines">{{line}}</li>
+		</ul>
+		<input type="text" placeholder="New line" ng-model="string3">
+		<span ng-click="console.add(console.englishC.name, string3)" class="add-btn">Add</span>
+	</div>
+
+	<div class="console-column">
+		<h2>Spanish Cities</h2>
+		<ul>
+			<li ng-repeat="line in console.spanishC.lines">{{line}}</li>
+		</ul>
+		<input type="text" placeholder="New line" ng-model="string4">
+		<span ng-click="console.add(console.spanishC.name, string4)" class="add-btn">Add</span>
+	</div>
+</div>

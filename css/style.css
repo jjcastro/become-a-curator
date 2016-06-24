@@ -311,6 +311,40 @@ footer a:hover {
   box-shadow: none;
 }
 
+/* CONSOLE
+===================== */
+
+.console-header {
+  background-color: #F3858C;
+  padding: 50px 60px 20px;
+}
+
+.console-body {
+  padding: 20px 60px 50px;
+}
+
+.console-body h2 {
+  font-size: 1.2em;
+}
+
+.console-column {
+  padding-bottom: 40px;
+}
+
+.console-column input {
+  font-size: 1em;
+  width: calc(80% - 50px);
+}
+
+.console-column span.add-btn {
+  background-color: #F3858C;
+  line-height: 1.5em;
+  padding: 0 5px;
+  font-size: 1.1em;
+  display: inline-block;
+  cursor: pointer;
+}
+
 /* SPINNING ANIMATION
 ===================== */
 
@@ -337,6 +371,21 @@ footer a:hover {
 
 /* MEDIA QUERIES
 ===================== */
+
+@media screen and (min-width: 450px) {
+  .console-column {
+    width: 50%;
+    float: left;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .console-column {
+    width: 25%;
+    /*margin: 0 0.5%;*/
+    float: left;
+  }
+}
 
 @media screen and (min-width: 1200px) {
   body {

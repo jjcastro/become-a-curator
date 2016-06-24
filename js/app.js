@@ -37,9 +37,10 @@ angular.module('app', ['ui.router', 'ngSanitize', 'langService'])
       })
       // console page
       .state('console', {
-        url         : "/console",
-        templateUrl : "views/console.tpl.html",
-        controller  : "consoleCtrl",
+        url          : "/console",
+        templateUrl  : "views/console.tpl.html",
+        controller   : "consoleCtrl",
+        controllerAs : "console"
       })
   })
 
@@ -65,7 +66,13 @@ angular.module('app', ['ui.router', 'ngSanitize', 'langService'])
               + 'document=' + document;
       return $http.jsonp(url + '&callback=JSON_CALLBACK');
     };
-    
+
+    generator.addBits = function(document, string) {
+      var url = 'http://api.becomeacurator.com/bits?'
+              + 'document=' + document;
+      return $http.post(url, { string: string });
+    };
+
     return generator;
   })
 
@@ -131,18 +138,26 @@ angular.module('app', ['ui.router', 'ngSanitize', 'langService'])
   // CONSOLE CONTROLLER
   // ========================
 
-  .controller('consoleCtrl', function($state, GeneratorSvc, $stateParams) {
+  .controller('consoleCtrl', function(GeneratorSvc, $state) {
     var vm = this;
 
-    vm.request = function(lang) {
-      vm.loading = true;
-      GeneratorSvc.get(lang || $stateParams.lang, $stateParams.fn, $stateParams.ln, 5)
-        .then(function(response) {
-          vm.content = response.data.text;
-          vm.loading = false;
-        }); 
+    vm.getBits = function(lang) {
+      GeneratorSvc.getBits('english-influences')
+        .then(function(response) { vm.englishI = response.data }); 
+      GeneratorSvc.getBits('english-cities')
+        .then(function(response) { vm.englishC = response.data }); 
+      GeneratorSvc.getBits('spanish-influences')
+        .then(function(response) { vm.spanishI = response.data }); 
+      GeneratorSvc.getBits('spanish-cities')
+        .then(function(response) { vm.spanishC = response.data }); 
     };
 
-    vm.loading = true;
-    vm.request();
+    vm.add = function(doc, string) {
+      GeneratorSvc.addBits(doc, string)
+        .then(function(response) {
+          $state.go($state.current, {}, {reload: true})
+        });
+    };
+
+    vm.getBits();
   });
