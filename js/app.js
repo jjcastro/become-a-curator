@@ -65,13 +65,7 @@ angular.module('app', ['ui.router', 'ngSanitize', 'langService'])
               + 'document=' + document;
       return $http.jsonp(url + '&callback=JSON_CALLBACK');
     };
-
-    // generator.getBits = function(document) {
-    //   var url = 'http://api.becomeacurator.com/bits?'
-    //           + 'document=' + document;
-    //   return $http.jsonp(url + '&callback=JSON_CALLBACK');
-    // }
-
+    
     return generator;
   })
 
