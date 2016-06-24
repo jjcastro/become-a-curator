@@ -236,6 +236,55 @@ form .submit:focus {
   color: #F3858C;
 }
 
+/* ABOUT PAGE
+===================== */
+
+.about-main {
+  background-color: #fff;
+  width: calc(100% - 300px);
+  overflow: auto;
+  height: 100vh;
+}
+
+.about-main > .text-wrapper {
+  padding: 40px 60px;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+.about-main a {
+  color: #333;
+}
+
+.about-main b {
+  font-weight: 700;
+}
+
+.about-main p.lead {
+font-size: 1.2em;
+line-height: 1.5em;
+}
+
+.about-main span.sources-expanded {
+  color: #333;
+  background-color: rgba(243, 133, 140, 0.7);
+  /*background-color: #F3858C;*/
+  /*color: #fff;*/
+}
+
+.about-main span.sources-link,
+.about-main a {
+  box-shadow: inset 0 -2px 0 rgba(243, 133, 140, 0.9);
+  border-bottom: 2px solid rgba(243, 133, 140, 0.9);
+  transition: 0.15s all ease;
+  cursor: pointer;
+}
+
+.about-main span.sources-link:hover,
+.about-main a:hover {
+  background-color: rgba(243, 133, 140, 0.9);
+}
+
 /* FOOTER
 ===================== */
 
@@ -325,5 +374,9 @@ footer a:hover {
 
   span.another {
     margin-top: 20px;
+  }
+
+  .about-main {
+    width: calc(100% - 330px);
   }
 }

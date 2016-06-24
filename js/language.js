@@ -8,7 +8,7 @@ angular.module('langService', []).service('LangSvc', function() {
   language.en = {
 
     footer: {
-      project: "a fun project by",
+      project: "a project by",
       and: "and"
     },
 
@@ -38,16 +38,17 @@ angular.module('langService', []).service('LangSvc', function() {
       loading: "loading..."
     },
 
-     aboutPage: {
-      p1: "Become a Curator is an automatic curatorial text generator. By doing this, we do not attempt to minimize the importance or attack curating in any sense. We just want to show --hopefully through humor-- that art is circular and that most of art speeches are somehow related. To find meaning can be a fun task and this is all about that.",
+    aboutPage: {
+      leadP: "<b>Become a curator</b> is an automatic curatorial text generator. The statements are generated using a computer algorithm powered by statistical models created based on large amounts of text. These models are run through random iterations based on word frequency, to automatically generate clear but meaningless sentences. This process is called a <a href='https://en.wikipedia.org/wiki/Markov_chain'>Markov Chain</a>. The original text comes from processing several curatorial statements by many museums and galleries around the world, such as " /* these. */,
 
-      p2: "The curatorial notes are builted up using  lablablablabalbalablabalbal. The original texts come from many museums and galleries around the world such as MoMA, el New Museum, MCASD, MALBA, Serpentine Galleries, Tate Modern, The Contemporary Austin, The MCA Chicago, The MACBA, The Art Museum at Tokio and the Museum of Contemporary Art in Canada. The final texts are created by a machine, none of them are repeated. Yes, a machine. Yes, not repeated. This is how it works: lablablablabalbalablabalbal.",
+      sourceLink: "these",
+      sources: "MoMA, New Museum, MCASD, MALBA, Serpentine Galleries, Tate Modern, The Contemporary Austin, MCA Chicago, MACBA, The Art Museum at Tokio, and The Museum of Contemporary Art in Canada",
 
-      p3: "This page was designed by Juliana Castro V. and developed by Juan José Castro. If you want to find out more about our project, how did we created it or where do texts come from don't hesitate to contact us. If you just want to say hello, we will also be pleased to receive your message at becomeacurator@gmail.com.",
+      info: 
+        "<p>As a disclaimer, we're not attempting to minimize the importance of art curating in any way. We just want to show –hopefully through humor– that art is circular and that most of art speech is somehow related. To find meaning can be fun and this is all about that.</p>" +
+        "<p>Keep in mind, we are not storing your data. If you want to find out more about our project, how we created it, where the texts come from or you just want to say hello, don't hesitate to get in touch at <a href='mailto:becomeacurator@gmail.com'>becomeacurator@gmail.com</a>.  If you liked it, please share:</p>",
 
-      p4: "Remember, we are not going to use your data to do anything. You can just put names and words and have fun out of it.",
-
-      social: "Oh, yes. If you liked it, please share:"
+      credits: "Designed, developed and curated by <a href='http://julianacastrov.com'>Juliana Castro</a> and <a href='http://jjcastro.com'>Juan José Castro</a>."
     }
   };
 
@@ -89,15 +90,15 @@ angular.module('langService', []).service('LangSvc', function() {
     },
 
     aboutPage: {
-      p1: "Become a curator un generador automático de textos curatoriales. Con él, no nos interesa atacar la labor del curador / comisario en ningún sentido. Creemos en la importancia de su trabajo pero nos interesa mostrar --esperamos que con humor-- que a veces el arte puede ser circular, que los pretextos del arte se tocan y que muchos discursos están de alguna forma relacionados. Encontrar sentido puede ser una tarea divertida y de eso se trata esto.",
+      leadP: /* Become a curator... */ " es un generador automático de textos curatoriales. Con él, no nos interesa atacar la labor del curador / comisario en ningún sentido. Creemos en la importancia de su trabajo pero nos interesa mostrar --esperamos que con humor-- que a veces el arte puede ser circular, que los pretextos del arte se tocan y que muchos discursos están de alguna forma relacionados. Encontrar sentido puede ser una tarea divertida y de eso se trata esto.",
 
-      p2: "Los textos curatoriales son construidos con la ayuda de XXXZXZXASa.asdasda.  usando textos reales de importantes museos y galerías del mundo como el Museo de Arte Moderno de Medellín MAMM, Museo de Arte Latinoamericano de Buenos Aires MALBA, el Museo de Arte Contemporáneo - MUAC de la UNAM, Galería Max Estrella, NC-arte, Museo de Arte Contemporáneo de la Unviversidad de Chile, entre otros. Ninguna de las frases originales es repetida, en cambio, es generada automáticamente usando XXXZXZXASa.asdasda.",
+      sourceLink: "estos",
+      sources: "el Museo de Arte Moderno de Medellín MAMM, Museo de Arte Latinoamericano de Buenos Aires MALBA, el Museo de Arte Contemporáneo - MUAC de la UNAM, Galería Max Estrella, NC-arte, Museo de Arte Contemporáneo de la Unviversidad de Chile",
 
-      p3: "Este es un proyecto diseñado por Juliana Castro y desarrollado por Juan José Castro. Si quiere saber más de cómo lo hicimos o exactamente de dónde vienen los textos, por favor no dude en contactarnos. Si simplemente quiere saludar, también estaremos felices de recibir su mensaje en becomeacurator@gmail.com.",
-
-      p4: "Recuerde que no usaremos sus datos para nada. Puede poner lo que le plazca y divertirse como le parezca.",
-
-      social: "Y claro, si le gustó, por favor comparta:"
+      info: 
+        "<p>Los textos curatoriales son construidos con la ayuda de XXXZXZXASa.asdasda. Ninguna de las frases originales es repetida, en cambio, es generada automáticamente usando XXXZXZXASa.asdasda. Los textos originales provienen de importantes museos y galerías del mundo, como </p>" +
+        "<p>Este es un proyecto diseñado por Juliana Castro y desarrollado por Juan José Castro. Si quiere saber más de cómo lo hicimos o exactamente de dónde vienen los textos, por favor no dude en contactarnos. Si simplemente quiere saludar, también estaremos felices de recibir su mensaje en becomeacurator@gmail.com.</p>" +
+        "<p>Recuerde que no usaremos sus datos para nada. Puede poner lo que le plazca y divertirse como le parezca.Y claro, si le gustó, por favor comparta:</p>"
     }
 
   };

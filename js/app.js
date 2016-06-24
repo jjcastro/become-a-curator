@@ -54,6 +54,14 @@ angular.module('app', ['ui.router', 'ngSanitize', 'langService'])
     var vm = this;
     var userLang = (navigator.language || navigator.userLanguage).substring(0, 2);
 
+    vm.setLang = function(lang, reload) {
+      if (lang === 'es') {
+        vm.lang = LangSvc.es;
+      } else if (lang === 'en') {
+        vm.lang = LangSvc.en;
+      }
+    };
+
     vm.send = function(req) {
       if (typeof req       === "undefined" ||
           typeof req.fname === "undefined" ||
@@ -72,12 +80,8 @@ angular.module('app', ['ui.router', 'ngSanitize', 'langService'])
       }
     };
 
-    vm.setLang = function(lang, reload) {
-      if (lang === 'es') {
-        vm.lang = LangSvc.es;
-      } else if (lang === 'en') {
-        vm.lang = LangSvc.en;
-      }
+    vm.expandSources = function() {
+      vm.expanded = true;
     };
 
     vm.setLang(userLang, false);
