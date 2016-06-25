@@ -331,18 +331,27 @@ footer a:hover {
   padding-bottom: 40px;
 }
 
-.console-column input {
-  font-size: 1em;
-  width: calc(80% - 50px);
+.console-column form {
+  /*max-width: 150px;*/
 }
 
-.console-column span.add-btn {
-  background-color: #F3858C;
-  line-height: 1.5em;
-  padding: 0 5px;
-  font-size: 1.1em;
+.console-column input {
+  font-size: 1em;
+  width: calc(100% - 80px);
+}
+
+.console-column input.add {
+  background-color: #fff;
+  font-family: "bligh", sans-serif;
+  border: none;
   display: inline-block;
+  width: 50px;
   cursor: pointer;
+  border: 2px solid #F3858C;
+}
+
+.console-column input.add:hover {
+  background-color: #F3858C;
 }
 
 /* SPINNING ANIMATION

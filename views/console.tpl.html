@@ -12,8 +12,10 @@
 		<ul>
 			<li ng-repeat="line in console.englishI.lines">{{line}}</li>
 		</ul>
-		<input type="text" placeholder="New line" ng-model="string1">
-		<span ng-click="console.add(console.englishI.name, string1)" class="add-btn">Add</span>
+		<form novalidate class="simple-form" ng-submit="console.add(console.englishI.name, string1)">
+			<input type="text" placeholder="New line" ng-model="string1">
+			<input type="submit" value="Add" class="add">
+		</form>
 	</div>
 
 	<div class="console-column">
@@ -21,8 +23,10 @@
 		<ul>
 			<li ng-repeat="line in console.spanishI.lines">{{line}}</li>
 		</ul>
-		<input type="text" placeholder="New line" ng-model="string2">
-		<span ng-click="console.add(console.spanishI.name, string2)" class="add-btn">Add</span>
+		<form novalidate class="simple-form" ng-submit="console.add(console.spanishI.name, string2)">
+			<input type="text" placeholder="New line" ng-model="string2">
+			<input type="submit" value="Add" class="add">
+		</form>
 	</div>
 
 	<div class="console-column">
@@ -30,8 +34,10 @@
 		<ul>
 			<li ng-repeat="line in console.englishC.lines">{{line}}</li>
 		</ul>
-		<input type="text" placeholder="New line" ng-model="string3">
-		<span ng-click="console.add(console.englishC.name, string3)" class="add-btn">Add</span>
+		<form novalidate class="simple-form" ng-submit="console.add(console.englishC.name, string3)">
+			<input type="text" placeholder="New line" ng-model="string3">
+			<input type="submit" value="Add" class="add">
+		</form>
 	</div>
 
 	<div class="console-column">
@@ -39,7 +45,9 @@
 		<ul>
 			<li ng-repeat="line in console.spanishC.lines">{{line}}</li>
 		</ul>
-		<input type="text" placeholder="New line" ng-model="string4">
-		<span ng-click="console.add(console.spanishC.name, string4)" class="add-btn">Add</span>
+		<form novalidate class="simple-form" ng-submit="console.add(console.spanishC.name, string4)">
+			<input type="text" placeholder="New line" ng-model="string4">
+			<input type="submit" value="Add" class="add">
+		</form>
 	</div>
 </div>

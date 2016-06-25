@@ -11,7 +11,6 @@ angular.module('app', ['ui.router', 'ngSanitize', 'langService'])
 
   .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise("/");
-    // $locationProvider.html5Mode(true);
     $stateProvider
       // main page
       .state('main', {
@@ -34,13 +33,6 @@ angular.module('app', ['ui.router', 'ngSanitize', 'langService'])
         data: {
           bodyClass: 'pinkbkg'
         }
-      })
-      // console page
-      .state('console', {
-        url          : "/console",
-        templateUrl  : "views/console.tpl.html",
-        controller   : "consoleCtrl",
-        controllerAs : "console"
       })
   })
 
@@ -153,10 +145,12 @@ angular.module('app', ['ui.router', 'ngSanitize', 'langService'])
     };
 
     vm.add = function(doc, string) {
-      GeneratorSvc.addBits(doc, string)
-        .then(function(response) {
-          $state.go($state.current, {}, {reload: true})
-        });
+      if (typeof string !== "undefined" && string !== "") {
+        GeneratorSvc.addBits(doc, string)
+          .then(function(response) {
+            $state.go($state.current, {}, {reload: true})
+          });
+      }
     };
 
     vm.getBits();

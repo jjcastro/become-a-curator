@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="app" >
+<head>
+	<meta charset="UTF-8">
+	<title>Become a curator</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/animate.css">
+	<link rel="stylesheet" href="../css/style.css">
+
+	<script src="https://use.typekit.net/nyn7jtc.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+	<script src="../libs/angular.js"></script>
+	<script src="../libs/angular-ui-router.js"></script>
+	<script src="../libs/angular-sanitize.js"></script>
+
+	<script src="../js/app.js"></script>
+	<script src="../js/language.js"></script>
+</head>
+
+<body ng-controller="mainCtrl as ctrl" ng-class="$state.current.data.bodyClass">
+	
+	<div ng-controller="consoleCtrl as console">
+		<div class="console-header">
+
+			<h1>This is the developers console!</h1>
+			<p>These are the current bits selected for each category.<br>You can add more at the bottom of each column.</p>
+
+		</div>
+		<div class="console-body">
+			
+			<div class="console-column">
+				<h2>English Influences</h2>
+				<ul>
+					<li ng-repeat="line in console.englishI.lines">{{line}}</li>
+				</ul>
+				<form novalidate class="simple-form" ng-submit="console.add(console.englishI.name, string1)">
+					<input type="text" placeholder="New line" ng-model="string1">
+					<input type="submit" value="Add" class="add">
+				</form>
+			</div>
+
+			<div class="console-column">
+				<h2>Spanish Influences</h2>
+				<ul>
+					<li ng-repeat="line in console.spanishI.lines">{{line}}</li>
+				</ul>
+				<form novalidate class="simple-form" ng-submit="console.add(console.spanishI.name, string2)">
+					<input type="text" placeholder="New line" ng-model="string2">
+					<input type="submit" value="Add" class="add">
+				</form>
+			</div>
+
+			<div class="console-column">
+				<h2>English Cities</h2>
+				<ul>
+					<li ng-repeat="line in console.englishC.lines">{{line}}</li>
+				</ul>
+				<form novalidate class="simple-form" ng-submit="console.add(console.englishC.name, string3)">
+					<input type="text" placeholder="New line" ng-model="string3">
+					<input type="submit" value="Add" class="add">
+				</form>
+			</div>
+
+			<div class="console-column">
+				<h2>Spanish Cities</h2>
+				<ul>
+					<li ng-repeat="line in console.spanishC.lines">{{line}}</li>
+				</ul>
+				<form novalidate class="simple-form" ng-submit="console.add(console.spanishC.name, string4)">
+					<input type="text" placeholder="New line" ng-model="string4">
+					<input type="submit" value="Add" class="add">
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		{{ ctrl.lang.footer.project }}
+		<a href="http://julianacastrov.com">juliana</a>
+		{{ ctrl.lang.footer.and }} 
+		<a href="http://jjcastro.com">juan josé castro</a>.
+	</footer>
+
+</body>
+</html>
