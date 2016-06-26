@@ -26,7 +26,7 @@
 }
 
 body {
-  font-family: "bligh-local", sans-serif;
+  font-family: "tenso", sans-serif;
 }
 
 body {
@@ -361,7 +361,7 @@ footer a:hover {
 
 .console-column input.add {
   background-color: #fff;
-  font-family: "bligh-local", sans-serif;
+  font-family: "tenso", sans-serif;
   border: none;
   display: inline-block;
   width: 50px;
