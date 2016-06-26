@@ -1,4 +1,4 @@
-angular.module('app', ['ui.router', 'ngSanitize', 'langService']) 
+angular.module('app', ['ui.router', 'ngSanitize', 'langService'])  
 
   // Put state/params in rootScope to enable custom background on <body>
   .run(['$rootScope', '$state', '$stateParams', function ($rootScope, $state, $stateParams) {

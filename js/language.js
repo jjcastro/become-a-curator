@@ -1,4 +1,4 @@
-angular.module('langService', []).service('LangSvc', function() {
+angular.module('langService', []).service('LangSvc', function() { 
   var language = {};
 
 
