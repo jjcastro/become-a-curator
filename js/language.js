@@ -16,7 +16,7 @@ angular.module('langService', []).service('LangSvc', function() {
     otherLocale: "es",
 
     about: "what's this?",
-    other: "espa\u00F1ol",
+    other: "español",
 
     main: {
       title: "curatorial statement generator",
