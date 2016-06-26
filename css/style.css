@@ -1,7 +1,21 @@
 
+/* FONTS
+===================== */
+
 @font-face {
-  font-family: 'bligh-local';
-  src: url('../assets/bligh-regular.otf');
+    font-family: 'bligh-local';
+    src: url('../assets/bligh_regular.woff2') format('woff2'),
+         url('../assets/bligh_regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'bligh-local';
+    src: url('../assets/bligh_bold.woff2') format('woff2'),
+         url('../assets/bligh_bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
 }
 
 /* GENERAL
