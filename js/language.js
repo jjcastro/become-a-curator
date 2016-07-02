@@ -34,7 +34,7 @@ angular.module('langService', []).service('LangSvc', function() {
 
     result: {
       result: "here, your curatorial statement:",
-      another: "try another one.",
+      another: "try again",
       loading: "loading..."
     },
 
@@ -85,7 +85,7 @@ angular.module('langService', []).service('LangSvc', function() {
 
     result: {
       result: "tu texto curatorial:",
-      another: "una vez más.",
+      another: "una vez más",
       loading: "cargando..."
     },
 
