@@ -190,14 +190,17 @@ input[type="submit"] {
 .header-inner {
   position: relative;
   background-color: #F3858C;
-  top: 10px;
+  /*top: 10px;*/
   width: 100%;
+  height: 40px;
+  padding-top: 10px;
 
   /*right: 0;*/
   /*text-align: right;*/
 }
 
 .header-inner .url {
+  /*background-color: #F3858C;*/
   float: left;
   margin: 5px 20px 0;
 }
@@ -279,13 +282,10 @@ input[type="submit"] {
 
 .about-main {
   background-color: #fff;
-  width: calc(100% - 300px);
-  overflow: auto;
-  height: 100vh;
 }
 
 .about-main > .text-wrapper {
-  padding: 40px 60px;
+  padding: 5px 20px 40px;
   font-size: 1em;
   line-height: 1.5em;
 }
@@ -299,9 +299,10 @@ input[type="submit"] {
 }
 
 .about-main p.lead {
-font-size: 1.2em;
-line-height: 1.5em;
+  font-size: 1.2em;
+  line-height: 1.5em;
 }
+
 
 .about-main span.sources-expanded {
   color: #333;
@@ -315,8 +316,8 @@ line-height: 1.5em;
   box-shadow: inset 0 -2px 0 rgba(243, 133, 140, 0.9);
   border-bottom: 2px solid rgba(243, 133, 140, 0.9);
   transition: 0.15s all ease;
-  cursor: pointer;
 }
+  cursor: pointer;
 
 .about-main span.sources-link:hover,
 .about-main a:hover {
@@ -329,7 +330,7 @@ line-height: 1.5em;
 footer {
   /*background-color: #fff;*/
   color: rgba(0,0,0, 0.3);
-  position: absolute;
+  /*position: absolute;*/
   bottom: 0;
   right: 0;
   padding: 20px 20px;
@@ -439,9 +440,18 @@ footer a:hover {
 }
 
 @media screen and (min-width: 468px) {
+  
+  .header-inner {
+    font-size: 1em;
+  }
+
   .console-column {
     width: 50%;
     float: left;
+  }
+
+  section#main {
+    font-size: 1em;
   }
 
   footer {
@@ -464,6 +474,10 @@ footer a:hover {
 
   body {
     font-size: 16px;
+  }
+
+  .about-main > .text-wrapper {
+    padding: 40px 60px;
   }
 
   .header .url, .header .btn-inner {
@@ -499,6 +513,10 @@ footer a:hover {
   .header-inner#main {
     display: none;
   }
+
+  footer {
+    position: absolute;
+  }
 }
 
 /* iPad portrait and beyond */
@@ -509,9 +527,14 @@ footer a:hover {
     float: left;
   }
 
-  section#main {
-    font-size: 1em;
+  .about-main {
+    background-color: #fff;
+    width: calc(100% - 300px);
+    overflow: auto;
+    height: 100vh;
   }
+
+
 }
 
 @media screen and (min-width: 1200px) {

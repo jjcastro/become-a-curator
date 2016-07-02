@@ -1,15 +1,4 @@
 
-	<div class="about-main">
-		<div class="text-wrapper">
-		
-		<p class="lead"><span ng-bind-html="ctrl.lang.aboutPage.leadP"></span><span class="sources-link" ng-if="!ctrl.expanded" ng-click="ctrl.expandSources()">{{ctrl.lang.aboutPage.sourceLink}}</span><span class="sources-expanded" ng-if="ctrl.expanded">{{ctrl.lang.aboutPage.sources}}</span>.
-		
-		<div ng-bind-html="ctrl.lang.aboutPage.info"></div>
-		<div ng-bind-html="ctrl.lang.aboutPage.credits"></div>
-		</div>
-	</div>
-
-
 <div class="header-inner">
 	<a class="url" ui-sref="main">becomeacurator.com</a>
 
@@ -21,3 +10,14 @@
 		</a>
 	</div>
 </div>
+
+
+	<div class="about-main">
+		<div class="text-wrapper">
+		
+		<p class="lead"><span ng-bind-html="ctrl.lang.aboutPage.leadP"></span><span class="sources-link" ng-if="!ctrl.expanded" ng-click="ctrl.expandSources()">{{ctrl.lang.aboutPage.sourceLink}}</span><span class="sources-expanded" ng-if="ctrl.expanded">{{ctrl.lang.aboutPage.sources}}</span>.
+		
+		<div ng-bind-html="ctrl.lang.aboutPage.info"></div>
+		<div ng-bind-html="ctrl.lang.aboutPage.credits"></div>
+		</div>
+	</div>
