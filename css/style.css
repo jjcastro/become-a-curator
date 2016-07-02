@@ -105,6 +105,7 @@ body.pinkbkg {
 section#main {
   margin-left: 20px;
   padding-top: 25px;
+  font-size: 1.2em;
 }
 
 .header-inner#main {
@@ -172,6 +173,11 @@ form .submit:hover, form .submit:active {
 form .submit:focus {
   outline: none;
   color: #F3858C;
+}
+
+input {
+    border-radius: 0;
+    -webkit-appearance: none;
 }
 
 /* TEXT RESULTS PAGE
@@ -489,6 +495,10 @@ footer a:hover {
     width: 25%;
     /*margin: 0 0.5%;*/
     float: left;
+  }
+
+  section#main {
+    font-size: 1em;
   }
 }
 
