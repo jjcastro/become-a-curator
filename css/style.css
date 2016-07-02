@@ -180,6 +180,10 @@ input {
     -webkit-appearance: none;
 }
 
+input[type="submit"] {
+  font-family: sans-serif;
+}
+
 /* TEXT RESULTS PAGE
 ===================== */
 
