@@ -39,7 +39,7 @@ angular.module('langService', []).service('LangSvc', function() {
     },
 
     aboutPage: {
-      leadP: "<b>Become a curator</b> is an automatic curatorial text generator. The statements are generated using a computer algorithm powered by statistical models. These are created based on large amounts of text. The models are run through random iterations based on word frequency, to automatically generate clear but meaningless sentences. This process is called a <a href='https://en.wikipedia.org/wiki/Markov_chain'>Markov Chain</a>. The original text comes from processing several curatorial statements by many museums and galleries around the world, such as " /* these. */,
+      leadP: "<b>Become a curator</b> is an automatic curatorial text generator. The statements are generated using a computer algorithm powered by statistical models. These are created based on large amounts of text. The models are run through random iterations based on word frequency, to automatically generate clear but meaningless sentences. This process is called a <a href='https://en.wikipedia.org/wiki/Markov_chain'>Markov chain</a>. The original text comes from processing several curatorial statements by many museums and galleries around the world, such as " /* these. */,
 
       sourceLink: "these",
       sources: "MoMA, New Museum, MCASD, MALBA, Serpentine Galleries, Tate Modern, The Contemporary Austin, MCA Chicago, MACBA, The Art Museum at Tokio, and The Museum of Contemporary Art in Canada",
@@ -90,13 +90,13 @@ angular.module('langService', []).service('LangSvc', function() {
     },
 
     aboutPage: {
-      leadP: "<b>Become a curator</b> es un generador automático de textos curatoriales. Estos textos son producidos usando un algoritmo computacional que funciona por modelos estadísticos y son creados con base en grandes cantidades de texto. Los modelos se ejecutan a través de iteraciones aleatorias basadas en la frecuencia de palabras, para producir frases claras pero sin sentido. Este proceso se llama <a href='https://en.wikipedia.org/wiki/Markov_chain'>Cadenas de Markov</a>. Los textos originales salen de procesar textos de sala de muchos museos y galerías alrededor del mundo, como " /* estos */,
+      leadP: "<b>Become a curator</b> es un generador automático de textos curatoriales. Estos textos son producidos usando un algoritmo que funciona a través de modelos probabilísticos creados con base en grandes cantidades de texto. Los modelos se ejecutan recorriendo iteraciones aleatorias basadas en la frecuencia de palabras, para producir frases aparentemente claras pero sin sentido. Este proceso se llama <a href='https://en.wikipedia.org/wiki/Markov_chain'>cadenas de Markov</a>. Los textos originales salen de procesar textos de sala de muchos museos y galerías alrededor del mundo, como " /* estos */,
 
       sourceLink: "estos",
       sources: "el Museo de Arte Moderno de Medellín MAMM, Museo de Arte Latinoamericano de Buenos Aires MALBA, el Museo de Arte Contemporáneo - MUAC de la UNAM, Galería Max Estrella, NC-arte, Museo de Arte Contemporáneo de la Unviversidad de Chile",
 
       info: 
-        "<p>Es importante aclarar que no queremos minimizar la importancia de la curaduría en ningún sentido. Solo queremos mostrar –ojalá a través del humor– que el arte es circular y que muchos de los discursos del arte están de alguna forma relacionados. Encontrar sentido puede ser una tarea divertida y de eso se trata todo esto.</p><p>Recuerda que no estamos archivando tu información. Si quieres saber más de nuestro proyecto, cómo lo creamos, de dónde vienen los textos o simplemente quieres saludar, no dudes en contactarnos escribiendo a becomeacurator@gmail.com. Si te gustó, por favor comparte.</p>"
+        "<p>Es importante aclarar que no queremos minimizar la importancia de la curaduría en ningún sentido. Solo queremos mostrar –ojalá a través del humor– que el arte es circular y que muchos de los discursos del arte están de alguna forma relacionados. Encontrar sentido puede ser una tarea divertida y de eso se trata todo.</p><p>Recuerda que no estamos archivando tu información. Si quieres saber más de nuestro proyecto, cómo lo creamos, de dónde vienen los textos o simplemente quieres saludar, no dudes en contactarnos escribiendo a becomeacurator@gmail.com. Si te gustó, por favor comparte.</p>"
         ,
         credits: "Diseñado, desarrollado y curado por <a href='http://julianacastrov.com'>Juliana Castro</a> y <a href='http://jjcastro.com'>Juan José Castro</a>."
     }
