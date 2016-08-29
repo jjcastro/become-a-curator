@@ -106,6 +106,7 @@ section#main {
   margin-left: 20px;
   padding-top: 25px;
   font-size: 1.2em;
+  margin-bottom: 50px;
 }
 
 .header-inner#main {
@@ -217,7 +218,7 @@ input[type="submit"] {
 .main-body {
   background-color: #F3858C;
   /*margin: 60px 0 50px 15%;*/
-  margin: 90px auto;
+  margin: 30px auto 50px;
   max-width: 600px;
 }
 
@@ -527,6 +528,10 @@ footer a:hover {
   .main-body .another {
     margin-right: 0px;
   }
+
+  .main-body {
+    margin: 90px auto;
+  }
 }
 
 /* iPad portrait and beyond */
@@ -566,6 +571,7 @@ footer a:hover {
   section#main {
     margin-left: 80px;
     padding-top:30px;
+
   }
 
   .main-body {
