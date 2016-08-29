@@ -489,6 +489,8 @@ footer a:hover {
 
   .header .url {
     margin: 10px 10px;
+    margin-right: 20px;
+    margin-top: 15px;
   }
 
   .header-inner .btn-inner {
@@ -499,14 +501,18 @@ footer a:hover {
 
   .header-inner {
     position: fixed;
-    top: 10px;
+    /*top: 10px;*/
     right: 0;
     text-align: right;
     max-width: 200px;
+    margin-right: 10px;
+    margin-top: 5px;
   }
 
   .header-inner .url {
     float: right;
+    margin: 0;
+    margin-right: 10px;
   }
 
   section#main {
