@@ -223,6 +223,7 @@ input[type="submit"] {
 
 .main-body h1 {
   margin-bottom: 15px;
+  padding-left: 25px;
 }
 
 .main-body .text-wrapper {
@@ -270,6 +271,7 @@ input[type="submit"] {
   display: inline-block;
   float: right;
   margin-top: 10px;
+  margin-right: 20px;
 }
 
 .main-body .another:hover {
@@ -517,6 +519,14 @@ footer a:hover {
   footer {
     position: absolute;
   }
+
+  .main-body h1 {
+    padding-left: 0px;
+  }
+
+  .main-body .another {
+    margin-right: 0px;
+  }
 }
 
 /* iPad portrait and beyond */
@@ -543,6 +553,10 @@ footer a:hover {
     margin: 0;
     font-size: 18px;
     color: #333;
+  }
+
+  h1 {
+    font-size: 1.8em;
   }
 
   div.titles {
@@ -577,5 +591,13 @@ footer a:hover {
 
   .about-main {
     width: calc(100% - 330px);
+  }
+
+  .header-inner {
+    /*position: fixed;
+    top: 10px;
+    right: 0;
+    text-align: right;*/
+    max-width: 220px;
   }
 }
