@@ -39,7 +39,7 @@ angular.module('langService', []).service('LangSvc', function() {
     },
 
     aboutPage: {
-      leadP: "<b>Become a curator</b> is an automatic curatorial text generator. The statements are generated using a computer algorithm powered by statistical models. These are created based on large amounts of text. The models are run through random iterations based on word frequency, to automatically generate clear but meaningless sentences. This process is called a <a href='https://en.wikipedia.org/wiki/Markov_chain'>Markov chain</a>. The original text comes from processing several curatorial statements by many museums and galleries around the world, such as " /* these. */,
+      leadP: "<b>Become a curator</b> is an automatic curatorial text generator. The statements are generated using a computer algorithm powered by statistical models, created based on large bodies of text. The models are run through random iterations based on word frequency, to automatically generate clear but meaningless sentences. This process is called a <a href='https://en.wikipedia.org/wiki/Markov_chain'>Markov chain</a>. The original texts come from processing several curatorial statements by many museums and galleries around the world, such as " /* these. */,
 
       sourceLink: "these",
       sources: "MoMA, New Museum, MCASD, MALBA, Serpentine Galleries, Tate Modern, The Contemporary Austin, MCA Chicago, MACBA, The Art Museum at Tokio, and The Museum of Contemporary Art in Canada",
@@ -90,7 +90,7 @@ angular.module('langService', []).service('LangSvc', function() {
     },
 
     aboutPage: {
-      leadP: "<b>Become a curator</b> es un generador automático de textos curatoriales. Estos textos son producidos usando un algoritmo que funciona a través de modelos probabilísticos creados con base en grandes cantidades de texto. Los modelos se ejecutan recorriendo iteraciones aleatorias basadas en la frecuencia de palabras, para producir frases claras pero sin sentido. Este proceso se conoce como <a href='https://en.wikipedia.org/wiki/Markov_chain'>cadena de Márkov</a>. Los textos originales salen de procesar textos de sala de muchos museos y galerías alrededor del mundo, como " /* estos */,
+      leadP: "<b>Become a curator</b> es un generador automático de textos curatoriales (comisariales, en España). Estos textos son producidos usando un algoritmo que funciona a través de modelos probabilísticos creados con base en grandes cantidades de texto. Los modelos se ejecutan recorriendo iteraciones aleatorias basadas en la frecuencia de palabras, para producir frases claras pero sin sentido. Este proceso se conoce como <a href='https://en.wikipedia.org/wiki/Markov_chain'>cadena de Márkov</a>. Los textos originales salen de procesar textos de sala de muchos museos y galerías alrededor del mundo, como " /* estos */,
 
       sourceLink: "estos",
       sources: "el Museo de Arte Moderno de Medellín MAMM, Museo de Arte Latinoamericano de Buenos Aires MALBA, el Museo de Arte Contemporáneo - MUAC de la UNAM, Galería Max Estrella, NC-arte, Museo de Arte Contemporáneo de la Unviversidad de Chile",
