@@ -3,7 +3,7 @@
 ===================== */
 
 * {
-  transition: 0.2s all ease;
+  /*transition: 0.2s all ease;*/
 }
 
 body {
@@ -48,13 +48,14 @@ div.landing {
   max-width: 90%;
   margin: 0 auto;
   transform: translateY(50vh);
-  margin-top: -120px;
+  margin-top: -140px;
 }
 
-div.landing i {
-  margin-top: -5px;
+div.landing i.em {
+  /*margin-top: 10px;*/
   display: inline-block;
-  font-size: 1.2em;
+  font-size: 1em;
+  margin-left: 5px;
 }
 
 hr {
@@ -74,7 +75,28 @@ p {
   font-weight: 100;
   margin-top: 20px;
   font-size: 1.2em;
+  line-height: 1.4em;
   /*font-family: 'adelle'*/
+}
+
+a.event {
+  color: #fff;
+  display: inline-block;
+  border: 2px solid #fff;
+  padding: 15px 20px;
+  margin-top: 15px;
+
+  /*transition: all 0.4s ease;*/
+}
+
+a.event:hover {
+  background-color: white;
+  color: #F3858C;
+}
+
+a.event i.fa {
+  font-size: 0.95em;
+  padding-right: 5px;
 }
 
 @media screen and (min-width: 375px) {
