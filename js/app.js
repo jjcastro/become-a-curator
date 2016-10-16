@@ -78,7 +78,7 @@ angular.module('app', ['ui.router', 'ngSanitize', 'langService'])
     vm.setLang = function(lang, reload) {
       if (lang === 'es') {
         vm.lang = LangSvc.es;
-      } else if (lang === 'en') {
+      } else {
         vm.lang = LangSvc.en;
       }
     };
