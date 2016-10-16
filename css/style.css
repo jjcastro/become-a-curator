@@ -65,6 +65,7 @@ h1.title {
   display: inline-block;
   border-bottom: 2px solid #fff;
   margin-bottom: 30px;
+  margin-top: 40px;
 }
 
 h1#invitation {
@@ -461,6 +462,10 @@ footer a:hover {
 }
 
 @media screen and (min-width: 768px) {
+
+  h1.title {
+    margin-top: initial;
+  }
   
   .header-inner {
     font-size: 1em;
