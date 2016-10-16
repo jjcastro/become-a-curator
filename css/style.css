@@ -360,25 +360,7 @@ footer a:hover {
 }
 
 .about-main a.aaa {
-  box-shadow: none !important;
-  border-bottom: none !important;
-  margin-right: 10px;
-  margin-top: 25px;
-  display: inline-block;
-}
-
-.about-main a span.another {
-  padding: 5px 10px;
-  display: inline-block;
-  border: 2px solid #444;
-}
-
-.about-main a:hover span.another {
-  padding: 5px 10px;
-  display: inline-block;
-  background-color: #444;
-  color: white;
-  border: 2px solid #444;
+  display: none;
 }
 
 /* CONSOLE
@@ -597,6 +579,28 @@ footer a:hover {
     overflow: auto;
     height: 100vh;
   }
+
+  .about-main a.aaa {
+  box-shadow: none !important;
+  border-bottom: none !important;
+  margin-right: 10px;
+  margin-top: 50px;
+  display: inline-block;
+}
+
+.about-main a span.another {
+  padding: 5px 10px;
+  display: inline-block;
+  border: 2px solid #444;
+}
+
+.about-main a:hover span.another {
+  padding: 5px 10px;
+  display: inline-block;
+  background-color: #444;
+  color: white;
+  border: 2px solid #444;
+}
 
 
 }
