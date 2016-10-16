@@ -35,6 +35,8 @@ angular.module('langService', []).service('LangSvc', function() {
     result: {
       result: "here, your curatorial statement:",
       another: "try again",
+      sharefb: "share to facebook",
+      sharetw: "share to twitter",
       loading: "loading..."
     },
 
@@ -46,7 +48,7 @@ angular.module('langService', []).service('LangSvc', function() {
 
       info: 
         "<p>As a disclaimer, by creating this we're not attempting to minimize the importance of art curating in any way. We just want to show –hopefully through humor– that art is circular and that most of art speech is somehow related. Finding meaning can be fun and this is all about that.</p>" +
-        "<p>Keep in mind, we are not storing your data. If you want to find out more about our project, how we created it, where the texts come from or you just want to say hello, don't hesitate to get in touch at <a href='mailto:becomeacurator@gmail.com'>becomeacurator@gmail.com</a>.  If you liked it, please share:</p>",
+        "<p>Keep in mind, we are not storing your data. If you want to find out more about our project, how we created it, where the texts come from or you just want to say hello, don't hesitate to get in touch at <a href='mailto:becomeacurator@gmail.com'>becomeacurator@gmail.com</a>.  If you liked it, please share.</p>",
 
       credits: "Designed, developed and curated by <a href='http://julianacastrov.com'>Juliana Castro</a> and <a href='http://jjcastro.com'>Juan José Castro</a>."
     }
@@ -86,6 +88,8 @@ angular.module('langService', []).service('LangSvc', function() {
     result: {
       result: "tu texto curatorial:",
       another: "una vez más",
+      sharefb: "compartir a facebook",
+      sharetw: "compartir a twitter",
       loading: "cargando..."
     },
 

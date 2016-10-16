@@ -19,5 +19,20 @@
 		
 		<div ng-bind-html="ctrl.lang.aboutPage.info"></div>
 		<div ng-bind-html="ctrl.lang.aboutPage.credits"></div>
+
+		<a class="aaa" href="#" onClick="MyWindow=window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A//becomeacurator.com','MyWindow','resizable,height=630,width=560'); return false;">
+			<span class="another"
+						style="cursor: pointer">
+					{{ ctrl.lang.result.sharefb }}
+			</span>
+		</a>
+		<a class="aaa" href="#" onClick="MyWindow=window.open('https://twitter.com/home?status=Become%20a%20curator%20-%20http%3A//becomeacurator.com','MyWindow','resizable,height=630,width=560'); return false;">
+			<span class="another"
+						style="cursor: pointer">
+					{{ ctrl.lang.result.sharetw }}
+			</span>
+		</a>
+
+		
 		</div>
 	</div>
