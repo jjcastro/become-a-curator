@@ -65,13 +65,21 @@ angular.module('app', ['ui.router', 'ngSanitize', 'langService'])
       return $http.post(url, { string: string });
     };
 
+    generator.addName = function(name) {
+      var url = 'http://api.becomeacurator.com/names';
+      return $http.post(url, { user: {
+        name: name,
+        date: new Date()
+      }});
+    };
+
     return generator;
   })
 
   // MAIN CONTROLLER
   // ========================
 
-  .controller('mainCtrl', function($state, LangSvc) {
+  .controller('mainCtrl', function($state, LangSvc, GeneratorSvc) {
     var vm = this;
     var userLang = (navigator.language || navigator.userLanguage).substring(0, 2);
 
@@ -93,6 +101,9 @@ angular.module('app', ['ui.router', 'ngSanitize', 'langService'])
         vm.error = true;
       } else {
         vm.error = false;
+
+        GeneratorSvc.addName(req.fname + ' ' + req.lname);
+
         $state.go('text', {
           fn: req.fname,
           ln: req.lname,
@@ -116,11 +127,12 @@ angular.module('app', ['ui.router', 'ngSanitize', 'langService'])
 
     vm.request = function(lang) {
       vm.loading = true;
+
       GeneratorSvc.get(lang || $stateParams.lang, $stateParams.fn, $stateParams.ln, 5)
         .then(function(response) {
           vm.content = response.data.text;
           vm.loading = false;
-        }); 
+        });
     };
 
     vm.loading = true;
