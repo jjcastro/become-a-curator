@@ -44,7 +44,7 @@ angular.module('app', ['ui.router', 'ngSanitize', 'langService'])
     var generator = {};
 
     generator.get = function(language, fname, lname, num) {
-      var url = 'http://api.becomeacurator.com/' + language + '?'
+      var url = 'http://become-a-curator-backend.herokuapp.com/' + language + '?'
               + 'fname=' + fname + '&'
               + 'lname=' + lname + '&';
       if (num) {
@@ -54,19 +54,19 @@ angular.module('app', ['ui.router', 'ngSanitize', 'langService'])
     };
 
     generator.getBits = function(document) {
-      var url = 'http://api.becomeacurator.com/bits?'
+      var url = 'http://become-a-curator-backend.herokuapp.com/bits?'
               + 'document=' + document;
       return $http.jsonp(url + '&callback=JSON_CALLBACK');
     };
 
     generator.addBits = function(document, string) {
-      var url = 'http://api.becomeacurator.com/bits?'
+      var url = 'http://become-a-curator-backend.herokuapp.com/bits?'
               + 'document=' + document;
       return $http.post(url, { string: string });
     };
 
     generator.addName = function(name) {
-      var url = 'http://api.becomeacurator.com/names';
+      var url = 'http://become-a-curator-backend.herokuapp.com/names';
       return $http.post(url, { user: {
         name: name,
         date: new Date()
