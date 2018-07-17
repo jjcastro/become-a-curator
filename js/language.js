@@ -50,7 +50,7 @@ angular.module('langService', []).service('LangSvc', function() {
         "<p>As a disclaimer, by creating this we're not attempting to minimize the importance of art curating in any way. We just want to show –hopefully through humor– that art is circular and that most of art speech is somehow related. Finding meaning can be fun and this is all about that.</p>" +
         "<p>If you want to find out more about our project, how we created it, where the texts come from or you just want to say hello, don't hesitate to get in touch at <a href='mailto:juan@castrovaron.com'>juan@castrovaron.com</a>.  If you liked it, please share.</p>",
 
-      credits: "Designed, developed and curated by <a href='http://juancastrov.com'>Juan Castro V.</a> and <a href='http://julianacastrov.com'>Juliana Castro V</a>."
+      credits: "Designed, developed and curated by <a href='http://castrovaron.com'>Juan Castro Varón</a> and <a href='http://julianacastro.co'>Juliana Castro V</a>."
     }
   };
 
@@ -102,7 +102,7 @@ angular.module('langService', []).service('LangSvc', function() {
       info: 
         "<p>Es importante aclarar que no queremos minimizar la importancia de la curaduría en ningún sentido. Solo queremos mostrar –ojalá a través del humor– que el arte es circular y que muchos de los discursos del arte están de alguna forma relacionados. Encontrar sentido puede ser una tarea divertida y de eso se trata todo.</p><p>Si quieres saber más de nuestro proyecto, cómo lo creamos, de dónde vienen los textos o simplemente quieres saludar, no dudes en contactarnos escribiendo a juan@castrovaron.com. Si te gustó, por favor comparte.</p>"
         ,
-        credits: "Diseñado, desarrollado y curado por <a href='http://juancastrov.com'>Juan Castro V.</a> y <a href='http://julianacastrov.com'>Juliana Castro V</a>."
+        credits: "Diseñado, desarrollado y curado por <a href='http://castrovaron.com'>Juan Castro Varón</a> y <a href='http://julianacastro.co'>Juliana Castro V</a>."
     }
 
   };
